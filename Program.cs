@@ -1,25 +1,30 @@
 ﻿using System;
 
-namespace SharpLearning
+namespace C_SHARP
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter number from 0 to 99");
-            int guessedNumber = Convert.ToInt32(Console.ReadLine());
-            int left = 0, right = 99, average;
-            while (true)
+            int n;
+            int factorial = 1;
+            Console.Write("Enter n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i < n + 1; ++i)
             {
-                average = (left + right) / 2;
-                if (guessedNumber < average) right = average - 1;
-                else if (guessedNumber > average) left = average + 1;
-                else
+                if (n == 0)
                 {
-                    Console.WriteLine("Guessed number: " + average);
+                    Console.Write(1);
                     break;
                 }
+                    
+                factorial = factorial * i;
             }
+            string fact = factorial.ToString();
+            Console.Write("Factorial is ");
+            Console.WriteLine(fact);
         }
     }
+
 }
