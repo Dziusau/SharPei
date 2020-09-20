@@ -2,7 +2,7 @@
 
 namespace C_SHARP
 {
-    class Program
+    class Task_1
     {
 
         static void Main(string[] args)
