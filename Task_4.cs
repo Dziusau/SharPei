@@ -2,7 +2,7 @@
 
 namespace SharpLearning
 {
-    class Program
+    class Task_4
     {
         static void GuessNumber(int number)
         {
