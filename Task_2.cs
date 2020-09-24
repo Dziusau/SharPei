@@ -53,7 +53,7 @@ namespace Fibonachi
                         {
                             Console.Write(fibonachi(i) + " ");
                         }
-                        Console.WriteLine("Введите число элементов, которые хотите вывести: ");
+                        
                         break;
                     }
             }
