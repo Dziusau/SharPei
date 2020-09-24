@@ -44,17 +44,6 @@ namespace Fibonachi
                         Console.WriteLine("число_    _    _"+fibonachi(input)+"\n      |_(o_o)_|\n    \t  |\n    \t _|_\n     \t|   |\n     \t|   |\nявляется-   - числом Фибоначчи для "+input);
                         break;
                     }
-                case 2:
-                    {
-                        Console.WriteLine("Введите число элементов, которые хотите вывести: ");
-                        int input = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Ряд Фибоначчи для "+input+": ");
-                        for (int i = 0; i < input; i++)
-                        {
-                            Console.Write(fibonachi(i) + " ");
-                        }
-                        break;
-                    }
             }
         }
     }
