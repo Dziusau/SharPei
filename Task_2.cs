@@ -53,7 +53,7 @@ namespace Fibonachi
                         {
                             Console.Write(fibonachi(i) + " ");
                         }
-                        
+
                         break;
                     }
             }
