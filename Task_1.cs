@@ -7,23 +7,21 @@ namespace C_SHARP
 
         static void Main(string[] args)
         {
-            int n;
-            int factorial = 1;
             Console.Write("Enter n: ");
-            n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i < n + 1; ++i)
+            var n = Convert.ToInt32(Console.ReadLine());
+            if (n < 1)
             {
-                if (n == 0)
-                {
-                    Console.Write(1);
-                    break;
-                }
-                    
+                Console.WriteLine("Factorial is 1");
+                return;
+            }
+
+            var factorial = 1;
+            for (var i = 1; i < n + 1; ++i)
+            {
                 factorial = factorial * i;
             }
-            string fact = factorial.ToString();
-            Console.Write("Factorial is ");
-            Console.WriteLine(fact);
+
+            Console.WriteLine($"Factorial is {factorial}");
         }
     }
 
