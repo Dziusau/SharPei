@@ -48,7 +48,6 @@ namespace Fibonachi
                     {
                         Console.WriteLine("Введите число элементов, которые хотите вывести: ");
                         int input = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Ряд Фибоначчи для "+input+": ");
                         for (int i = 0; i < input; i++)
                         {
                             Console.Write(fibonachi(i) + " ");
