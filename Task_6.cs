@@ -19,7 +19,7 @@ namespace Anecdotes
                     Console.WriteLine("ну всё_    _    _                       \n      | _(т.т)_ |\n    \t   |\n    \t  _|_\n     \t |   |\n     \t |   |\n        -    - пока.....");
                     return;
                 }
-                Console.WriteLine(random_anecdote_from_file(path, 10));
+                Console.WriteLine(random_anecdote_from_file(path, 30));
             }
         }
 
