@@ -6,6 +6,7 @@ namespace Task1
     {
         static void Main(string[] args)
         {
+            Task3.Strat();
             Fibonachi.Start();
             Console.Write("Enter n: ");
             var n = Convert.ToInt32(Console.ReadLine());
