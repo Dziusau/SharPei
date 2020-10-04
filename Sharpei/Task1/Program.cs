@@ -6,6 +6,7 @@ namespace Task1
     {
         static void Main(string[] args)
         {
+            GuassesTheNumber.Start();
             Task3.Strat();
             Fibonachi.Start();
             Console.Write("Enter n: ");
