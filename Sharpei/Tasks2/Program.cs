@@ -6,8 +6,10 @@ namespace Tasks2
     {
         static void Main(string[] args)
         {
+            Task7.Start();
             Stack.Start();
             Jokes.Start();
+           
         }
     }
 }
