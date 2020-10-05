@@ -13,6 +13,8 @@ namespace Tasks3
             {
                 case "1":
                     { 
+                        Object_counter count = new Object_counter();
+                        Console.WriteLine($"Numbers of object: " );
                         break;
                     }
                 case "2":
@@ -55,6 +57,16 @@ namespace Tasks3
                     }
             }
            
+    }
+
+    public class Object_counter
+    {
+        private int counter { get; set;}
+
+        public Object_counter()
+        {
+            counter++;
+        }
     }
 
     class Black_Box<T>
