@@ -16,7 +16,10 @@ namespace Tasks3
                         break;
                     }
                 case "2":
-                    {
+                    {   
+                        Console.WriteLine("Введите значение переменной");
+                        Black_Box<int> black_Box = new Black_Box<int>(Console.ReadLine());
+                        Console.WriteLine($"Значение переменной: {black_Box.Variable}");
                         break;
                     }
                 case "3":
@@ -54,6 +57,28 @@ namespace Tasks3
            
     }
 
+    class Black_Box<T>
+    {
+        private T variable;
+
+        public T Variable 
+        {
+            set 
+            {
+                variable = value;   
+            }
+            get 
+            {
+                return variable;
+            } 
+        }
+
+	    public Black_Box(T value)
+        {
+            Variable = value;
+        }
+    }
+ 
     interface quackle
     {
         public void quack();
