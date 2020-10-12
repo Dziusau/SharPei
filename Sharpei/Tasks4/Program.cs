@@ -46,6 +46,10 @@ namespace Tasks4
                         }
                     case "3":
                         {
+                            Program program = new Program();
+                            Akcio akcio = new Akcio();
+                            program.Object();
+                            akcio.Object();
                             break;
                         }
                 }
@@ -58,6 +62,7 @@ abstract class Shape
 {
     public abstract void Draw();
 }
+
 class Circle : Shape
 {
     public override void Draw()
@@ -102,6 +107,7 @@ class Triangle : Shape
         Console.SetCursorPosition(20, 20);
     }
 }
+
 class Rectangle : Shape
 {
     public override void Draw()
@@ -114,6 +120,23 @@ class Rectangle : Shape
         }
     }
 }
+
+class Program : Object
+{
+    public virtual void Object()
+    {
+        Console.WriteLine("loshki");
+    }
+}
+
+class Akcio : Program
+{
+    public override void Object()
+    {
+        Console.WriteLine("No, we're not pedicures. We're polupedicures");
+    }
+}
+
 class Flags_from_figures
 {
     public Flags_from_figures(string symbol)
