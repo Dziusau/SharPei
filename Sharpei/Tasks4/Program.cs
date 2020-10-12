@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq.Expressions;
 
 namespace Tasks4
@@ -9,6 +9,8 @@ namespace Tasks4
         {
             while (true)
             {
+                string ch = Console.ReadLine();
+                Console.Clear();
                 Console.WriteLine("Choose task:\n1 - draw figures version 2.0\n2 - draw flags from symbols\n3 - hate this teams");
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -16,7 +18,7 @@ namespace Tasks4
                     case "1":
                         {
                             Random random = new Random();
-                            switch (random.Next(1, 3))
+                            switch (random.Next(1, 4))
                             {
                                 case 1:
                                     Circle circle = new Circle();
@@ -60,7 +62,6 @@ class Circle : Shape
 {
     public override void Draw()
     {
-        throw new NotImplementedException();
         Console.WindowHeight = 35;
         Console.WindowWidth = 55;
         int r = 15;
@@ -80,11 +81,11 @@ class Circle : Shape
         Console.SetCursorPosition(0, r * 2 + 2);
     }
 }
-class Triangle : Shape 
+
+class Triangle : Shape
 {
     public override void Draw()
     {
-        throw new NotImplementedException();
         int x1 = 20, x2 = 20;
         for (int i = 20; i > 2; i--)
         {
@@ -105,11 +106,10 @@ class Rectangle : Shape
 {
     public override void Draw()
     {
-        throw new NotImplementedException();
         for (int i = 0; i < 14; i++)
         {
             for (int j = 0; j < 21; j++)
-               Console.Write(i == 0 || i == 13 || j == 0 || j == 20 ? '#' : ' ');
+                Console.Write(i == 0 || i == 13 || j == 0 || j == 20 ? '#' : ' ');
             Console.WriteLine();
         }
     }
