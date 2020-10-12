@@ -15,6 +15,9 @@ namespace Tasks4
                 {
                     case "1":
                         {
+                            Shape shape;
+                            shape = shape.randShape();
+                            shape.Draw();
                             break;
                         }
                     case "2":
@@ -36,7 +39,85 @@ namespace Tasks4
 
     }
 }
+abstract class Shape
+{
+    public abstract void Draw();
 
+    public Shape randShape()
+    {
+        Random random = new Random();
+        switch (random.Next(1, 3))
+        {
+            case 1:
+                Circle circle = new Circle();
+                return circle;
+            case 2:
+                Triangle triangle = new Triangle();
+                return triangle;
+            case 3:
+                Rectangle rectangle = new Rectangle();
+                return rectangle;
+        }
+    }
+}
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        throw new NotImplementedException();
+        Console.WindowHeight = 35;
+        Console.WindowWidth = 55;
+        int r = 15;
+        int x = 0;
+        for (int y = 0; y < r; ++y)
+        {
+            x = (int)Math.Round(2 * Math.Sqrt((Math.Pow(r, 2) - Math.Pow(y, 2))));
+            Console.SetCursorPosition(x + r, y + r);
+            Console.Write('#');
+            Console.SetCursorPosition(x + r, -y + r);
+            Console.Write('#');
+            Console.SetCursorPosition(-x + 2 * r, -y + r);
+            Console.Write('#');
+            Console.SetCursorPosition(-x + 2 * r, y + r);
+            Console.Write('#');
+        }
+        Console.SetCursorPosition(0, r * 2 + 2);
+    }
+}
+class Triangle : Shape 
+{
+    public override void Draw()
+    {
+        throw new NotImplementedException();
+        int x1 = 20, x2 = 20;
+        for (int i = 20; i > 2; i--)
+        {
+            Console.SetCursorPosition(x1++, i);
+            Console.Write('#');
+            Console.SetCursorPosition(x2--, i);
+            Console.Write('#');
+        }
+        for (int i = 2; i < 39; i++)
+        {
+            Console.SetCursorPosition(i, 2);
+            Console.Write('#');
+        }
+        Console.SetCursorPosition(20, 20);
+    }
+}
+class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        throw new NotImplementedException();
+        for (int i = 0; i < 14; i++)
+        {
+            for (int j = 0; j < 21; j++)
+               Console.Write(i == 0 || i == 13 || j == 0 || j == 20 ? '#' : ' ');
+            Console.WriteLine();
+        }
+    }
+}
 class Flags_from_figures
 {
     public Flags_from_figures(string symbol)
