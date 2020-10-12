@@ -15,9 +15,22 @@ namespace Tasks4
                 {
                     case "1":
                         {
-                            Shape shape;
-                            shape = shape.randShape();
-                            shape.Draw();
+                            Random random = new Random();
+                            switch (random.Next(1, 3))
+                            {
+                                case 1:
+                                    Circle circle = new Circle();
+                                    circle.Draw();
+                                    break;
+                                case 2:
+                                    Triangle triangle = new Triangle();
+                                    triangle.Draw();
+                                    break;
+                                case 3:
+                                    Rectangle rectangle = new Rectangle();
+                                    rectangle.Draw();
+                                    break;
+                            }
                             break;
                         }
                     case "2":
@@ -42,23 +55,6 @@ namespace Tasks4
 abstract class Shape
 {
     public abstract void Draw();
-
-    public Shape randShape()
-    {
-        Random random = new Random();
-        switch (random.Next(1, 3))
-        {
-            case 1:
-                Circle circle = new Circle();
-                return circle;
-            case 2:
-                Triangle triangle = new Triangle();
-                return triangle;
-            case 3:
-                Rectangle rectangle = new Rectangle();
-                return rectangle;
-        }
-    }
 }
 class Circle : Shape
 {
