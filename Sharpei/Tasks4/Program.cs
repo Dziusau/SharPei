@@ -81,6 +81,7 @@ class Circle : Shape
         Console.SetCursorPosition(0, r * 2 + 2);
     }
 }
+
 class Triangle : Shape
 {
     public override void Draw()

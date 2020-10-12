@@ -20,7 +20,7 @@ namespace Tasks3
                 case "2":
                     {   
                         Console.WriteLine("Введите значение переменной");
-                        Black_Box<int> black_Box = new Black_Box<int>(Console.ReadLine());
+                        Black_Box<int> black_Box = new Black_Box<int>(Convert.ToInt32(Console.ReadLine()));
                         Console.WriteLine($"Значение переменной: {black_Box.Variable}");
                         break;
                     }
