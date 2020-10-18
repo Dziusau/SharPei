@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Sharpei"
+    "\\Sharpei",
+    "\\Sharpei\\Tasks5"
   ],
-  "SelectedNode": "\\Sharpei\\Sharpei.sln",
+  "SelectedNode": "\\Sharpei\\Tasks5\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
