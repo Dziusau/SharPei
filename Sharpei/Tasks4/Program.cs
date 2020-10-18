@@ -48,7 +48,6 @@ namespace Tasks4
                         {
                             Program program = new Program();
                             Akcio akcio = new Akcio();
-                            program.Object();
                             akcio.Object();
                             break;
                         }

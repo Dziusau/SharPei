@@ -37,13 +37,121 @@ namespace Tasks5
                         }
                     case "3":
                         {
+                            Figure figure;
+                            Circle circle = new Circle();
+                            figure = circle.Draw;
+                            Console.WriteLine("Choose figure:\n1 - raund\n2 - triangle\n3 - rectangle");
+                            switch (Console.ReadLine())
+                            {
+                                case "1":
+                                    {
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        Triangle triangle = new Triangle(); 
+                                        figure = triangle.Draw;
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        Square square = new Square();
+                                        figure = square.Draw;
+                                        break;
+                                    }
+                            }
+                            try
+                            {
+                                Console.WriteLine("Enter side: ");
+                                int x = Convert.ToInt32(Console.ReadLine());
+                                figure(x);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Exception: {ex.Message}");
+                            }
                             break;
                         }
                 }
             }
         }
+        delegate void Figure(int x);
     }
-
+    class Circle
+    {
+        public void Draw(int r)
+        {
+            if (r <= 0)
+            {
+                throw new Exception("Radius must be > 0");
+            }
+            else
+            {
+                Console.WindowHeight = 35;
+                Console.WindowWidth = 55;
+                int x;
+                for (int y = 0; y < r; ++y)
+                {
+                    x = (int)Math.Round(2 * Math.Sqrt((Math.Pow(r, 2) - Math.Pow(y, 2))));
+                    Console.SetCursorPosition(x + r, y + r);
+                    Console.Write('#');
+                    Console.SetCursorPosition(x + r, -y + r);
+                    Console.Write('#');
+                    Console.SetCursorPosition(-x + 2 * r, -y + r);
+                    Console.Write('#');
+                    Console.SetCursorPosition(-x + 2 * r, y + r);
+                    Console.Write('#');
+                }
+                Console.SetCursorPosition(0, r * 2 + 2);
+            }
+        }
+    }
+    class Triangle
+    {
+        public void Draw(int side)
+        {
+            if (side <= 0)
+            {
+                throw new Exception("Side must be > 0");
+            }
+            else
+            {
+                int x1 = 20, x2 = 20;
+                for (int i = 20; i > 20 - side * 1.71 / 2; i--)
+                {
+                    Console.SetCursorPosition(x1++, i);
+                    Console.Write('#');
+                    Console.SetCursorPosition(x2--, i);
+                    Console.Write('#');
+                }
+                for (int i = (int)(20 - side * 1.71 / 2); i < side; i++)
+                {
+                    Console.SetCursorPosition(i, 2);
+                    Console.Write('#');
+                }
+                Console.SetCursorPosition(20, 20);
+            }
+        }
+    }
+    class Square
+    {
+        public void Draw(int side)
+        {
+            if (side <= 0)
+            {
+                throw new Exception("Side must be > 0");
+            }
+            else
+            {
+                for (int i = 0; i < side; i++)
+                {
+                    for (int j = 0; j < side; j++)
+                        Console.Write(i == 0 || i == (side - 1) || j == 0 || j == (side - 1) ? '#' : ' ');
+                    Console.WriteLine();
+                }
+            }
+        }
+    }
     namespace SuperProgrammer
     {
         class IQ_Test
