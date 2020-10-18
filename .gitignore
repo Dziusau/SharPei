@@ -8,6 +8,7 @@
 /Sharpei/Tasks2/bin
 /Sharpei/Tasks4/obj
 <<<<<<< HEAD
+<<<<<<< HEAD
 /Sharpei/Tasks5/obj
 =======
 /Sharpei/Tasks5/obj/
@@ -15,3 +16,8 @@
 >>>>>>> c8e4b09f282d3ef349bc4f53a406464af71ac55e
 /Sharpei/TheBestLib/obj
 /Sharpei/TheBestLib/bin
+=======
+/Sharpei/Tasks5/obj/
+/.vs
+>>>>>>> c8e4b09f282d3ef349bc4f53a406464af71ac55e
+/Sharpei/Tasks5/bin
