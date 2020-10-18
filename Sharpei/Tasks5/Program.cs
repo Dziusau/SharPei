@@ -70,6 +70,9 @@ namespace Tasks5
                             {
                                 Console.WriteLine($"Exception: {ex.Message}");
                             }
+                            Console.WriteLine("Press any key to continue");
+                            Console.ReadKey();
+                            Console.Clear();
                             break;
                         }
                 }
@@ -87,8 +90,7 @@ namespace Tasks5
             }
             else
             {
-                Console.WindowHeight = 35;
-                Console.WindowWidth = 55;
+                Console.Clear();
                 int x;
                 for (int y = 0; y < r; ++y)
                 {
@@ -116,6 +118,7 @@ namespace Tasks5
             }
             else
             {
+                Console.Clear();
                 int x1 = 20, x2 = 20;
                 for (int i = 20; i > 20 - side * 1.71 / 2; i--)
                 {
@@ -143,6 +146,7 @@ namespace Tasks5
             }
             else
             {
+                Console.Clear();
                 for (int i = 0; i < side; i++)
                 {
                     for (int j = 0; j < side; j++)
