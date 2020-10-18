@@ -35,13 +35,87 @@ namespace Tasks5
                         }
                     case "3":
                         {
+                            Figure figure;
+                            Console.WriteLine("Choose figure:\n1 - raund\n2 - triangle\n3 - rectangle");
+                            switch (Console.ReadLine())
+                            {
+                                case "1":
+                                    {
+                                        figure = Circle;
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        figure = Triangle;
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        figure = Square;
+                                        break;
+                                    }
+                            }
+                            try
+                            {
+                                Console.WriteLine("Enter side: ");
+                                int x = Convert.ToInt32(Console.ReadLine());                                
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
                             break;
                         }
                 }
             }
         }
+        delegate void Figure(int x);
+        public static void Circle(int r)
+        {
+            Console.WindowHeight = 35;
+            Console.WindowWidth = 55;
+            int x;
+            for (int y = 0; y < r; ++y)
+            {
+                x = (int)Math.Round(2 * Math.Sqrt((Math.Pow(r, 2) - Math.Pow(y, 2))));
+                Console.SetCursorPosition(x + r, y + r);
+                Console.Write('#');
+                Console.SetCursorPosition(x + r, -y + r);
+                Console.Write('#');
+                Console.SetCursorPosition(-x + 2 * r, -y + r);
+                Console.Write('#');
+                Console.SetCursorPosition(-x + 2 * r, y + r);
+                Console.Write('#');
+            }
+            Console.SetCursorPosition(0, r * 2 + 2);
+        }
+        public static void Triangle(int side)
+        {
+            int x1 = 20, x2 = 20;
+            for (int i = 20; i > 20 - side * 1.71 / 2; i--)
+            {
+                Console.SetCursorPosition(x1++, i);
+                Console.Write('#');
+                Console.SetCursorPosition(x2--, i);
+                Console.Write('#');
+            }
+            for (int i = (int)(20 - side * 1.71 / 2); i < side; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write('#');
+            }
+            Console.SetCursorPosition(20, 20);
+        }
+        public static void Square(int side)
+        {
+            for (int i = 0; i < side; i++)
+            {
+                for (int j = 0; j < side; j++)
+                    Console.Write(i == 0 || i == (side - 1) || j == 0 || j == (side - 1)  ? '#' : ' ');
+                Console.WriteLine();
+            }
+        }
     }
-
     namespace SuperProgrammer
     {
         class IQ_Test
