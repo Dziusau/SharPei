@@ -12,7 +12,7 @@ namespace Tasks5
         {
             while (true)
             {
-                Console.WriteLine("Choose task: 1 - library, 2 - namespaces, 3 - error in figures");
+                Console.WriteLine("Choose task: 1 - library, 2 - namespaces, 3 - error in figures, 4 - new task about using");
                 switch (Console.ReadLine())
                 {
                     case "1":
@@ -75,10 +75,45 @@ namespace Tasks5
                             Console.Clear();
                             break;
                         }
+                         case "4":
+                        {       
+                             change_days_of_week("Sunday", "Sunday");
+                             Console.ReadLine();
+                             change_days_of_week("Monday", "Monday");
+                            break;
+                        }
                 }
             }
         }
         delegate void Figure(int x);
+        private static void change_days_of_week(string name_first_day, string name_last_day)
+        {
+            using (Day_of_week first_day = new Day_of_week { title = name_first_day })
+            {
+                try 
+                {
+                    if (name_first_day == "Monday")
+                    {
+                        throw new Exception("aaaaaaaaaa not monday pls");
+                    }
+                }
+                catch(Exception e){
+                    Console.WriteLine("we can't display this week");
+                    return;
+                }
+                Console.Write("Days of week: "+ first_day.title);
+            }
+            Console.Write(" Tuesday Wednesday Thursday Friday Saturday ");
+            using (Day_of_week last_day = new Day_of_week { title = name_last_day })
+            {
+                Console.WriteLine(last_day.title);
+            }
+        }
+    }
+     public class Day_of_week : IDisposable
+    {
+        public string title { get; set; }
+        public void Dispose() { }
     }
     class Circle
     {
