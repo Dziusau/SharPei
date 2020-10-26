@@ -10,7 +10,7 @@ namespace Tasks6
             while (true)
             {
 
-                Console.WriteLine(" 1. Balance\n 2. Diposit\n 3. Take off\n 4. Exit\n");
+                Console.WriteLine(" 1. Balance\n 2. Diposit\n 3. Take off\n 4. Exit\n\n5. Task 6/2: Find unique words");
                 int k = Convert.ToInt32(Console.ReadLine());
                 switch (k)
                 {
@@ -27,7 +27,18 @@ namespace Tasks6
                         money.take_off();
                         break;
                     case 4:
-                        return;                        
+                        return;                
+                    case 5:
+                        {
+                        Console.WriteLine("Enter string: ");
+                        List<string> unique = UniqueWords.GetUniqueWords(Console.ReadLine());
+                        Console.WriteLine("Unique words: ");
+                        foreach (string word in unique)
+                        {
+                           Console.WriteLine(word);
+                        }
+                        break;
+                        }
                 }
 
             }
