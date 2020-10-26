@@ -7,8 +7,10 @@ namespace Tasks6
         static void Main(string[] args)
         {
             Money money = new Money();
+            money.AddNotifier(sendSMS);
+
             while (true)
-            {
+            { 
 
                 Console.WriteLine(" 1. Balance\n 2. Diposit\n 3. Take off\n 4. Exit\n");
                 int k = Convert.ToInt32(Console.ReadLine());
@@ -31,6 +33,13 @@ namespace Tasks6
                 }
 
             }
+
+
+        }
+
+        static public void sendSMS(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
