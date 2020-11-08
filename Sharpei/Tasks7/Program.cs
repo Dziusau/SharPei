@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Pipes;
-using System.Threading;
 
 namespace Tasks7
 {
@@ -22,48 +21,7 @@ namespace Tasks7
             string input = Console.ReadLine();
             Define_rainbows putin = new Define_rainbows(input);
             putin.see_rainbow();
-
-            Console.WriteLine("Task 3\n Press any key");
-            Console.ReadKey();
-
-            Thread thread = new Thread(new ThreadStart(Flow));
-            thread.Start();
-
-            int b = 97;
-            for (int i = 0; i < 50; i++)
-            {
-
-                Console.WriteLine("The first flow: ");
-                Console.WriteLine(b);
-                if (i == 49)
-                {
-                    Console.WriteLine("Live Belarus!");
-                    Console.ReadKey();
-                    Environment.Exit(0);
-                }
-
-                Thread.Sleep(300);
-            }
         }
-
-        static void Flow()
-        {
-            int a = 3;
-            for (int i = 0; i < 50; i++)
-            {
-
-                Console.WriteLine("The second flow: ");
-                Console.WriteLine(a);
-                if (i == 49)
-                {
-                    Console.WriteLine("Cockroach alive!");
-                    Console.ReadKey();
-                    Environment.Exit(0);
-                }
-                Thread.Sleep(300);
-            }
-        }
-
         class Rainbow
         {
             string[] colors = { "red", "orange", "yellow", "green", "light blue", "dark blue", "purple" };
